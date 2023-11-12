@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+           display: flex; 
+           flex-direction: column;
+           gap: 10px;
+        }
+
+        .row1 {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row1-biru {
+            background-color: #83A2FF;
+            flex-grow: 1;
+            height: 50px;
+            width: 0px;
+        }
+
+        .row1-birumuda {
+            background-color: #B4BDFF;
+            flex-grow: 3;
+            height: 50px;
+        }
+
+        .row2 {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row2-krem {
+            background-color: #FFE3BB;
+            flex-grow: 1;
+            height: 300px;
+            width: 0px;
+        }
+
+        .row2-kremtua {
+            background-color: #FFD28F;
+            flex-grow: 2;
+            height: 300px;
+        }
+
+        .row2-khaki {
+            background-color: #B0A695;
+            flex-grow: 1;
+            height: 300px;
+            width: 0px;
+        }
+
+        .row3 {
+            background-color: #776B5D;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row1">
+            <div class="row1-biru">Kotak Biru</div>
+            <div class="row1-birumuda">Kotak Biru Muda</div>
+        </div>
+        <div class="row2">
+            <div class="row2-krem">Kotak Krem</div>
+            <div class="row2-kremtua">Kotak Krem Tua</div>
+            <div class="row2-khaki">Kotak Khaki</div>
+        </div>
+        <div class="row3">Kotak Coklat</div>
+    </div>
+</body>
+</html>
