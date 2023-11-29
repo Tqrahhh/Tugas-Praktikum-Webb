@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        padding: 0;
+        margin: 4vh;
+        height: 100%;
+        text-align: center;
+    }   
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    header {
+        background-color: aqua;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    main {
+        display: flex;
+    }
+
+    aside {
+        background-color: rgb(74, 182, 182);
+        flex: 1;
+        padding: 100px;
+        margin-right: 3vh;
+    }    
+
+
+    article {
+        background-color: rgb(178, 240, 240);
+        flex: 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 150px;
+    }
+
+    img {
+        padding: 20px;
+        max-width: 20%;
+    }
+
+    footer {
+        background-color: aqua;
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">This Header</header>
+        <main>
+             <aside>This Aside</aside>
+             <article>This Article>
+                  <img src="sunrise.jpg" alt="sunrise">
+                  <img src="sunrise.jpg" alt="sunrise">
+                  <img src="sunrise.jpg" alt="sunrise"> 
+             </article>
+        </main>  
+    <footer>This Footer</footer>
+    </div>
+    
+</body>
+</html>

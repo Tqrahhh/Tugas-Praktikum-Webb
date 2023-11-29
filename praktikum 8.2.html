@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header, footer {
+            background-color: rgb(126, 114, 11);
+            width: 100%;
+            height: 10vh;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #main article {
+            background-color: rgb(194, 174, 150);
+            width: 70vw;
+        }
+
+        #main aside, 
+        #main nav {
+            height: 60vh;
+            flex: 0 0 20vw;
+        }
+
+        #main nav {
+            background-color: rgb(99, 93, 62);
+        }
+
+        #main aside {
+            background-color: rgb(165, 126, 42);
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>Ini adalah Header</header>
+    <div id="main"> 
+        <article>Ini adalah Article</article>
+        <aside>Ini adalah Aside</aside>
+        <nav>Ini adalah Nav</nav>
+    </div>
+    <footer>Ini adalah Footer</footer>
+</body>
+</html>
