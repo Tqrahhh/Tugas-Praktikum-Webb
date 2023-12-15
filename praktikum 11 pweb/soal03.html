@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Biaya Parkir</title>
+    <script>
+
+        function hitung_biaya_parkir(){
+          const jam_masuk = parseFloat(document.getElementById("jam_masuk").value);
+          const jam_keluar = parseFloat(document.getElementById("jam_keluar").value);
+
+          const biaya_awal = 3000;
+          const biaya_perjam = 1000;
+
+          const lama_parkir = jam_keluar - jam_masuk;
+          let biaya_total = biaya_awal;
+
+          if (lama_parkir > 2){
+            biaya_total += (lama_parkir - 2) * biaya_perjam;
+          }
+
+          document.getElementById("biaya_parkir").innerHTML = biaya_total;
+        }
+        
+    </script>
+</head>
+<body>
+  <h1>Menghitung Biaya Parkir</h1>
+  <label for="jam_masuk">Jam Masuk:</label>
+  <input type="number" id="jam_masuk" name="jam_masuk">
+  <br/>
+  <br/>
+  <label for="jam_keluar">Jam Keluar:</label>
+  <input type="jam_keluar" id="jam_keluar" name="jam_keluar">
+
+  <button onclick="hitung_biaya_parkir()">Hitung Biaya Parkir</button>
+
+  <p>Biaya Parkir: <span id="biaya_parkir"></span></p>
+</body>
+</html>
