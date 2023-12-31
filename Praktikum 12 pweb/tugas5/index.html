@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form  Validasi</title>
+    <script>
+        document.getElementById("form_validasi").addEventListener("konfirmasi"), function(event){
+            let isvalid = true;
+
+            const identitas = document.getElementById("identitas");
+            const email = document.getElementById("email");
+            const  jam = document.getElementById("jam");
+            const tujuan = document.getElementById("tujuan");
+            const jumlah = document.getElementById("jumlah");
+
+            const identitas_error = document.getElementsByClassName("identitas_error");
+            const email_error = document.getElementById("email_error");
+            const jam_error = document.getElementById("jam_error");
+            const tujuan_error = document.getElementById("tujuan_error");
+            const jumlah_error = document.getElementById("jumlah_error");
+
+            const identitasValue = identitas.value.trim();
+            const emailValue = email.value.trim();
+            const jamValue = jam.value.trim();
+            const tujuanValue = tujuan.value.trim();
+            const jumlahValue = parseInt(jumlah.value);
+
+            const identitasMaxLength = 40;
+            const emailMaxLength = 40;
+ 
+
+        if (identitasValue === ""){
+            identitas_error.textContent = "Nama identitas harus diisi";
+            identitas.style.borderColor = "red";
+            isValid = false;
+        } else if (identitasValue.length > identitasMaxLength){
+            identitas_error.textContent = "Nama identitas maksimum ${identitasMaxLength} karakter";
+            identitas.style.borderColor = "red";
+            isvalid = false;
+        } else {
+            identitas_error.textContent = "";
+            identitas.style.borderColor = "";
+        }
+
+        if (emailValue === ""){
+            email_error.textContent = "Email harus diisi";
+            email.style.borderColor = "red";
+            isvalid = false;
+        } else if (emailValue.length > emailMaxLength){
+            email_error.textContent = "Email maksimum $(emailMaxLength) karakter";
+            email.style.borderColor = "red";
+            isvalid = false;
+        } else {
+            email_error.textContent = "";
+            email.style.borderCollapse = "";
+        }
+
+        const jamRegex = /^(?:[01]\d|2[0-3]):(?:[0-5]\d)$/;
+        if (!jamRegex.test(jamValue)){
+            jam_error.textContent = "Format jam tidak valid (HH:mm)";
+            jam.style.borderColor = "red";
+            isvalid = false;
+        } else {
+            jam_error.textContent = "";
+            jam.style.borderColor = "";
+        }
+
+        if (tujuanValue === ""){
+            tujuan_error.textContent = "Tujuan kunjungan harus diidi";
+            tujuan.style.borderColor = "red";
+            isvalid = false;
+        } else{
+            tujuan_error.textContent = "";
+            tujuan.style.borderColor = "";
+        }
+
+        if (isNaN(jumlahValue) || jumlahValue > 25){
+            jumlah_error.textContent = "Jumlah kunjungan harus diisi";
+            jumlah.style.borderColor = "red";
+            isvalid = false;
+        } else {
+            jumlah_error.textContent = "";
+            jumlah.style.borderColor = "";
+        }
+
+        if (!isvalid){
+            event.preventDefault();
+        }
+        }
+    </script>
+</head>
+<body>
+    <h1>Surat Kontrol RS.Polri</h1>
+     <form id="form_validasi">
+        <div>
+            <label for="identitas">Identitas :</label>
+            <input type="text" id="identitas" name="identitas" required maxlength="40">
+            <span class="error" id="identitas_error"></span>
+        </div>
+        <br/>
+        <br/>
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required maxlength="40">
+            <span class="error" id="email_error"></span>
+        </div>
+        <br/>
+        <br/>
+        <div>
+            <label for="jam">Jam Kedatangan :</label>
+            <input type="text" id="jam" name="jam" required pattern="(?:[01]\d|2[0-3]):(?:[0-5]\d)">
+            <select>
+            <option value="">Pilih jam kunjungan</option>
+            <option value="number">08:00-10:00</option>
+            <option value="number">10:00-12:00</option>
+            <option value="number">13:00-15:00</option>
+            <option value="number">18:00-20:00</option>
+            </select>
+            <span class="error" id="jam_error"></span>
+        </div>
+        <br/>
+        <br/>
+        <div>
+            <label for="tujuan">Tujuan Kunjungan :</label>
+            <input type="text" id="tujuan" name="tujuan" required>
+            <select name="tujuan" id="opsi">
+                <option value="pp">Pilih Poli</option>
+                <option value="pbp">Poli Bedah Plastik</option>
+                <option value="pbs">Poli Bedah Syaraf</option>
+                ,<option value="pj">Poli Jantung</option>
+                <option value="pg">Poli Gigi</option>
+                </select>
+            <span class="error" id="tujuan_error"></span>
+        </div>
+        <br/>
+        <br/>
+        <div>
+            <label for="jumlah">Jumlah Kunjungan :</label>
+            <input type="number" id="jumlah" name="jumlah" required min="1" max="25">
+            <span class="error" id="jumlah_error"></span>
+        </div>
+        <br/>
+        <br/>
+        <button type="konfirmasi">Konfirmasi</button>
+     </form>
+</body>
+</html>

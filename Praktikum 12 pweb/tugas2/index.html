@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Konversi Mata Uang Negara Asing ke Rupiah</title>
+    <script>
+        function konversi_mata_uang(){
+            let mata_uang = document.getElementById("mata_uang").value;
+            let jumlah_uang = document.getElementById("jumlah_uang").value;
+
+            let nilai_tukar = 0
+            switch(mata_uang){
+                case "JPY":
+                    nilai_tukar = 108
+                    break;
+                case "USD":
+                    nilai_tukar = 15449
+                    break;
+                case "EUR":
+                    nilai_tukar = 16968
+                    break;
+                case "SAR":
+                    nilai_tukar = 4114
+                    break;
+                case "SGD":
+                    nilai_tukar = 11632
+                    break;     
+                case "MYR":
+                    nilai_tukar = 3316
+                    break;
+                default:
+                    nilai_tukar = 1           
+            }
+
+            let hasil_konversi = jumlah_uang * nilai_tukar;
+            document.getElementById("hasil_rupiah").value = hasil_konversi;
+        }
+    </script>
+</head>
+<body>
+    <h1>Konversi Mata Uang ke Rupiah</h1>
+
+    <table border="1">
+        <tr>
+            <th>Pilih Mata Uang</th>
+            <th>Nilai Mata Uang</th>
+            <th>Nilai Uang Rupiah</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="mata_uang" onchange="konversi_mata_uang()">
+                    <option value="">Pilih Mata Uang</option>
+                    <option value="JPY">Yen Jepang</option>
+                    <option value="USD">Dollar Amerika</option>
+                    <option value="EUR">Euro Eropa</option>
+                    <option value="SAR">Riyal Arab Saudi</option>
+                    <option value="SGD">Dollar Singapore</option>
+                    <option value="MYR">Ringgit Malaysia</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" id="jumlah_uang" onchange="konversi_mata_uang()">
+            </td>
+            <td>
+                <input type="text" id="hasil_rupiah" readonly />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

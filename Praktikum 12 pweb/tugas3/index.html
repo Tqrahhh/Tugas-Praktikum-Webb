@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Chat</title>
+    <style>
+        .chat-container{
+            display: flex;
+            justify-content: left;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        .chat-box{
+            width: 300px;
+            background-color: rgb(105, 64, 11);
+            border: 1px sienna;
+            padding: 10px;
+        }
+
+        .chat-messages{
+            max-height: 200px;
+            overflow: auto;
+            margin-bottom: 10px;
+        }
+
+        button{
+            padding: 5px 10px;
+            background-color: rgb(12, 87, 62);
+            color: bisque;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        function kirim_pesan(){
+            let input_pesan = document.getElementById("input_pesan");
+            let obrolan_pesan = document.getElementById("obrolan_pesan");
+
+            let teks_pesan = input_pesan.value;
+
+            if(teks_pesan.trim() !== ""){
+                let pesan_baru = document.createElement("div");
+                pesan_baru.textContent = teks_pesan;
+                pesan_baru.classList.add("pesan");
+
+                obrolan_pesan.appendChild(pesan_baru);
+                obrolan_pesan.scrollTop = obrolan_pesan.scrollHeight;
+
+                input_pesan.value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="kolom_chat">
+        <div class="obrolan-pesan" id="obrolan_pesan"></div>
+        <input 
+        onchange="kirim_pesan()"
+        type="text" id="input_pesan" 
+        placeholder="isi pesan...." >
+        <br/>
+        <button>Send</button>
+        </div>
+    </div>
+</body>
+</html>
